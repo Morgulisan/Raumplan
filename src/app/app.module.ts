@@ -1,18 +1,35 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TagesansichtComponent } from './tagesansicht/tagesansicht.component';
+import { WochenplanComponent } from './wochenplan/wochenplan.component';
+import { TerminComponent } from './termin/termin.component';
+import { BackgroundImageDirectiveModule } from './shared/background-image.directive';
+import {MatTabsModule} from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {NeuerTerminComponent, NeuerTerminDialogPopComponent} from './shared/neuer-termin/neuer-termin.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [
+  imports: [BrowserModule, FormsModule, BackgroundImageDirectiveModule, MatTabsModule
+    , BrowserAnimationsModule, MatIconModule
+    , MatButtonModule, MatTooltipModule, MatInputModule, MatTableModule, MatDialogModule],
+  declarations:
+  [
     AppComponent
+    , TagesansichtComponent
+    , WochenplanComponent
+    , TerminComponent
+    , NeuerTerminComponent
+    , NeuerTerminDialogPopComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

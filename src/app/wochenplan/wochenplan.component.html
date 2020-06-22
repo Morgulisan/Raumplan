@@ -1,0 +1,36 @@
+
+
+<!--<div class="row no-padding">
+  <div class="col l2 m3 s12 icon no-padding" [ngStyle]="{ 'background-image': 'url(' + bild + ')'}">
+        <span class="raumName">{{name}}</span>
+  </div>
+  <div class="s12 m9 l10 indigo darken-4"><span>Dom</span></div>
+</div> -->
+<div class="row disable-text-selection">
+  <div class="col m1 s1 no-padding">
+    <div class="kopf"></div>
+    <div class="time" *ngFor="let n of [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]">
+      <span>{{n}}:00</span>
+    </div> 
+  </div>
+
+  <div class="row col m10 s11 no-padding">
+    <div class="col l2 m2 s2 no-padding" style="position:relative;" *ngFor="let n of [1,2,3,4,5,6]">
+      <div class="kopf valign-wrapper"><span class="hide-on-small-only truncate">Mittwoch 25.03.</span><span class="show-on-small">25.03.</span></div>
+      <div (click)="neuerTermin($event)">
+        <div class="calendar" *ngFor="let n of [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]"></div>
+        <app-termin bookerName="Malte Kretzschmar" time="8" duration="12" eventName="S1"></app-termin>
+        <app-termin bookerName="Cristoph Pantke" time="12" duration="4" eventName="S1"></app-termin>
+        <app-termin bookerName="Cristoph Pantke" time="14" duration="8" eventName="S1"></app-termin>
+        <app-termin bookerName="neuer Termin" time="6.5" duration="4" eventName="<input type='text'>" [hidden]="hide" class="neu"></app-termin>
+      </div>
+    </div> 
+  </div>
+
+  <div class="col m1 no-padding hide-on-small-only">
+    <div class="kopf"></div>
+    <div class="time right" *ngFor="let n of [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]">
+      <span>{{n}}:00</span>
+    </div> 
+  </div>
+</div>
