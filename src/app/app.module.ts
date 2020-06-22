@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RaumansichtComponent } from './raumansicht/raumansicht.component';
-import { WochenplanComponent } from './wochenplan/wochenplan.component';
-import { TerminComponent } from './wochenplan/termin/termin.component';
+import { TagesansichtComponent } from './tagesansicht/tagesansicht.component';
+import { TerminComponent } from './tagesansicht/termin/termin.component';
 import { BackgroundImageDirectiveModule } from './shared/background-image.directive';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -46,7 +46,7 @@ import { FilterRoomsPipe } from './shared/filter-rooms.pipe';
   [
     AppComponent
     , RaumansichtComponent
-    , WochenplanComponent
+    , TagesansichtComponent
     , TerminComponent
     , NeuerTerminComponent
     , NeuerTerminDialogPopComponent, RaumTerminComponent, FilterRoomsPipe

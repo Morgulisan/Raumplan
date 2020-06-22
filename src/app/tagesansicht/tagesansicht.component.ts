@@ -1,11 +1,11 @@
 import { Component, OnInit, Inject } from '@angular/core';
 
 @Component({
-  selector: 'app-wochenplan',
-  templateUrl: './wochenplan.component.html',
-  styleUrls: ['./wochenplan.component.css']
+  selector: 'app-tagesansicht',
+  templateUrl: './tagesansicht.component.html',
+  styleUrls: ['./tagesansicht.component.css']
 })
-export class WochenplanComponent {
+export class TagesansichtComponent {
   public hide = true;
 
   constructor() {}

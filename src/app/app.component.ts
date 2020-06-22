@@ -31,12 +31,13 @@ export class AppComponent {
     }
   ],
   Dates: [
-    {dateDay : {Y: 2020, M: 4, D: 6}, dateTime: 7.5 , dateDuration: 4, Room: 'Dom', owner: '775726', name: 'S1'},
-    {dateDay : {Y: 2020, M: 4, D: 6}, dateTime: 9.5 , dateDuration: 6, Room: 'Dom', owner: '775726', name: 'S2'},
-    {dateDay : {Y: 2020, M: 4, D: 6}, dateTime: 17.5 , dateDuration: 2, Room: 'Dom', owner: '775726', name: 'WG'},
-    {dateDay : {Y: 2020, M: 4, D: 6}, dateTime: 9 , dateDuration: 4, Room: 'Theater', owner: '775726', name: 'S1'},
-    {dateDay : {Y: 2020, M: 4, D: 6}, dateTime: 10 , dateDuration: 4, Room: 'Elisenbrunnen', owner: '775726', name: 'S2'},
-    {dateDay : {Y: 2020, M: 4, D: 6}, dateTime: 12.5 , dateDuration: 4, Room: 'Tivoli', owner: '775726', name: 'WG'}
+    {dateDay : {Y: 2020, M: 4, D: 6}, dateTime: 7.5 , dateDuration: 4, Room: 'Dom', owner: 'Malte Kretzschmar', name: 'S1'},
+    {dateDay : {Y: 2020, M: 4, D: 6}, dateTime: 9.5 , dateDuration: 6, Room: 'Dom', owner: 'Malte Kretzschmar', name: 'S2'},
+    {dateDay : {Y: 2020, M: 4, D: 6}, dateTime: 17.5 , dateDuration: 2, Room: 'Dom', owner: 'Malte Kretzschmar', name: 'WG'},
+    {dateDay : {Y: 2020, M: 4, D: 6}, dateTime: 9 , dateDuration: 4, Room: 'Theater', owner: 'Fynn Kretzschmar', name: 'S1'},
+    {dateDay : {Y: 2020, M: 4, D: 6}, dateTime: 10 , dateDuration: 4, Room: 'Elisenbrunnen', owner: 'Adrian Habersetzer', name: 'S2'},
+    {dateDay : {Y: 2020, M: 4, D: 6}, dateTime: 12.5 , dateDuration: 4, Room: 'Tivoli', owner: '775726', name: 'WG'},
+    {dateDay : {Y: 2020, M: 4, D: 6}, dateTime: 13.5 , dateDuration: 4, Room: 'Tivoli', owner: 'Lukas Tester', name: 'S1'}
     ],
   Partecipants: [
     {

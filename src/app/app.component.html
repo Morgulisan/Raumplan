@@ -2,11 +2,14 @@
 <div class="container" id="central">
   <mat-tab-group>
     <mat-tab label="Raumansicht">
-      <app-tagesansicht *ngFor="let room of datastruct.Rooms" [roomName]="room.name" [roomImage]="room.img"
-                        [datastruct]="datastruct"></app-tagesansicht>
+      <app-raumansicht *ngFor="let room of datastruct.Rooms" [roomName]="room.name" [roomImage]="room.img"
+                        [datastruct]="datastruct"></app-raumansicht>
     </mat-tab>
-    <mat-tab label="Wochenübersicht">
-      <app-wochenplan></app-wochenplan>
+    <mat-tab label="Tagesübersicht">
+      <app-tagesansicht></app-tagesansicht>
+    </mat-tab>
+    <mat-tab label="Termin anlegen">
+
     </mat-tab>
   </mat-tab-group>
 </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-tagesansicht',
+  selector: 'app-raumansicht',
   templateUrl: './raumansicht.component.html',
   styleUrls: ['./raumansicht.component.css']
 })
