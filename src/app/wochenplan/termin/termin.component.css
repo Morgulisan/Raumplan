@@ -1,0 +1,55 @@
+
+.termin {
+  height: 45px;
+  width: 99%;
+  background-color: rgb(51, 182, 121);
+  border-color: rgb(51, 182, 121);
+  position: absolute;
+  top: 130px;
+  border-radius: 4px;
+  padding: 2px 5px;
+  color: white;
+  font-size: 14px;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  font-family: Roboto,Helvetica,Arial,sans-serif;
+  margin: 1px;
+}
+.profileImage{
+  width: 25px;
+  height: 25px;
+  /*display: inline-block;*/
+  border: 2px solid white;
+  vertical-align: bottom;
+  margin-right: 5px;
+  display:none;
+}
+
+.c_blue {
+  background-color: rgb(3, 155, 229);
+  border-color: rgb(3, 155, 229);
+}
+
+.c_green{
+  background-color: rgb(124, 179, 66);
+  border-color: rgb(124, 179, 66);
+}
+
+.c_yellow{
+  background-color: rgb(228, 196, 65);
+  border-color: rgb(228, 196, 65);
+}
+
+.c_red{
+  background-color: rgb(213, 0, 0);
+  border-color: rgb(213, 0, 0);
+}
+
+.c_orange{
+  background-color: rgb(244, 81, 30);
+  border-color: rgb(244, 81, 30);
+}
+
+.bookerName{
+  font-size: 11px
+}

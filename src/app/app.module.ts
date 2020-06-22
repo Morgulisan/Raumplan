@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { TagesansichtComponent } from './tagesansicht/tagesansicht.component';
+import { RaumansichtComponent } from './raumansicht/raumansicht.component';
 import { WochenplanComponent } from './wochenplan/wochenplan.component';
-import { TerminComponent } from './termin/termin.component';
+import { TerminComponent } from './wochenplan/termin/termin.component';
 import { BackgroundImageDirectiveModule } from './shared/background-image.directive';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +18,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { RaumTerminComponent } from './raumansicht/raum-termin/raum-termin.component';
+import { FilterRoomsPipe } from './shared/filter-rooms.pipe';
 
 @NgModule({
   imports:
@@ -43,11 +45,11 @@ import { MatNativeDateModule } from '@angular/material/core';
   declarations:
   [
     AppComponent
-    , TagesansichtComponent
+    , RaumansichtComponent
     , WochenplanComponent
     , TerminComponent
     , NeuerTerminComponent
-    , NeuerTerminDialogPopComponent
+    , NeuerTerminDialogPopComponent, RaumTerminComponent, FilterRoomsPipe
   ],
   bootstrap:
   [

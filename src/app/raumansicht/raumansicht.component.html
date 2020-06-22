@@ -1,8 +1,8 @@
 <div class="row">
   <div class="card-panel col s12 l12 m12 row no-padding hoverable">
     <div class="col l2 m3 s12 icon" [appBackgroundImage]="roomImage">
-      <span class="raumName">{{name}}</span>
-      <app-neuer-termin [name]="name" style="float: right; margin-top: 10px" [data]="data"></app-neuer-termin>
+      <span class="raumName">{{roomName}}</span>
+      <app-neuer-termin [name]="roomName" style="float: right; margin-top: 10px" [data]="datastruct"></app-neuer-termin>
     </div>
     <div class="col s12 l10 m9 no-padding ">
       <div class="nav-wrapper indigo darken-4" style="height:40px;line-height: 1.5;font-weight: normal;color:white">
@@ -15,15 +15,16 @@
       </div>-->
       <div style="overflow-x:scroll;overflow-y: hidden;" class="test">
         <div class="row no-padding" style="margin: 0;width:2000px; display: flex;min-height:83px; position: relative;">
-              <div class="indigo darken-4 tagesPadding"></div>
-              <div class="no-padding tagesStunde" *ngFor="let number of [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]"><span>{{number}}:00</span></div>
-              <div class="indigo darken-4 tagesPadding"></div>
-              <div class="termin">
-                <img src="https://a.thumbs.redditmedia.com/yQlJ56Lw_kU6wEfIq_vVDHcte17JNIFVeyMO05aAjZ8.png" class="circle profileImage" [alt]="name">
-                <span>S1</span>
-                <br>
-                <span class="truncate" style="font-size: 10px">Malte Kretzschmar</span>
-              </div>
+          <div class="indigo darken-4 tagesPadding"></div>
+          <div class="no-padding tagesStunde" *ngFor="let number of [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]"><span>{{number}}:00</span></div>
+          <div class="indigo darken-4 tagesPadding"></div>
+          <app-raum-termin *ngFor="let termin of datastruct.Dates | filterRooms: {Room: roomName}"
+                           [terminName]="termin.name"
+                           [bookerName]="termin.owner"
+                           [time]="termin.dateTime"
+                           [duration]="termin.dateDuration" >
+
+          </app-raum-termin>
         </div>
       </div>
     </div>

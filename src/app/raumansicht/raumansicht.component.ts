@@ -2,16 +2,16 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tagesansicht',
-  templateUrl: './tagesansicht.component.html',
-  styleUrls: ['./tagesansicht.component.css']
+  templateUrl: './raumansicht.component.html',
+  styleUrls: ['./raumansicht.component.css']
 })
-export class TagesansichtComponent implements OnInit {
-  @Input() name: string;
+export class RaumansichtComponent implements OnInit {
+  @Input() roomName: string;
   @Input() roomImage: string;
   @Input() test: string;
   @Input() date;
   @Input() datestring: string;
-  @Input() data;
+  @Input() datastruct: any;
 
   constructor() { }
 
@@ -19,6 +19,6 @@ export class TagesansichtComponent implements OnInit {
   }
 
   openDialog() {
-    console.log(this.name);
+    console.log(this.roomName);
   }
 }
