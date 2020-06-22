@@ -11,6 +11,7 @@ export class TagesansichtComponent implements OnInit {
   @Input() test: string;
   @Input() date;
   @Input() datestring: string;
+  @Input() data;
 
   constructor() { }
 

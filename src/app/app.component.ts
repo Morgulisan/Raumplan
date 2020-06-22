@@ -36,7 +36,16 @@ export class AppComponent {
   Partecipants: [
     {
       number : '775726',
-      name: 'Malte Kretzschmar'}
+      name: 'Malte Kretzschmar'
+    },
+    {
+      number : '774992',
+      name: 'Fynn Kretzschmar'
+    },
+    {
+      number : '773658',
+      name: 'Adrian Habersetzer'
+    },
     ]
 };
 

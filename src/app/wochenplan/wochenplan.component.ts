@@ -1,9 +1,4 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { TerminComponent } from '../termin/termin.component';
-export interface DialogData {
-  animal: string;
-  name: string;
-}
 
 @Component({
   selector: 'app-wochenplan',
@@ -22,7 +17,7 @@ export class WochenplanComponent {
     console.log(e.offsetY);
 
 
-    let neu = e.srcElement.getElementsByClassName("neu");
+    const neu = e.srcElement.getElementsByClassName('neu');
     console.log(neu);
     this.hide = !this.hide;
   }

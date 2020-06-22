@@ -1,9 +1,8 @@
 
-<div class="container">
-
+<div class="container" id="central">
   <mat-tab-group>
     <mat-tab label="Tagsübersicht">
-      <app-tagesansicht *ngFor="let room of datastruct.Rooms" [name]="room.name" [roomImage]="room.img"></app-tagesansicht>
+      <app-tagesansicht *ngFor="let room of datastruct.Rooms" [name]="room.name" [roomImage]="room.img" [data]="datastruct"></app-tagesansicht>
     </mat-tab>
     <mat-tab label="Wochenübersicht">
       <app-wochenplan></app-wochenplan>

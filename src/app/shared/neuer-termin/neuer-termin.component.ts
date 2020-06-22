@@ -3,6 +3,7 @@ import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material/dialog
 
 
 export interface DialogData {
+  appdata: any;
   animal: string;
   name: string;
 }
@@ -17,6 +18,8 @@ export class NeuerTerminComponent implements OnInit {
 
   @Input() name: string;
   @Input() animal: string;
+  @Input() date: string;
+  @Input() data: any;
 
 
   constructor(public dialog: MatDialog) { }
@@ -27,8 +30,14 @@ export class NeuerTerminComponent implements OnInit {
   openDialog(): void {
     console.log(this.name);
     const dialogRef = this.dialog.open(NeuerTerminDialogPopComponent, {
-      data: {name: this.name, animal: this.animal}
+      width: '650px',
+      data: {name: this.name, animal: this.animal, date: this.date, appdata: this.data}
     });
+    const timePickers = document.querySelectorAll('.timepicker');
+    M.Timepicker.init(
+        timePickers,
+        {twelveHour: false, i18n: {cancel: 'Abbrechen', done: 'Fertig', clear: 'reset'}, container: 'container'}
+      );
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
