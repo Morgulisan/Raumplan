@@ -41,9 +41,21 @@
   color: white;
   text-align: center;
   vertical-align: bottom;
+  background-size: cover;
 }
 .kopf span {
   width: 100%;
+}
+
+.raumSpalte{
+  width: 20%;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+}
+.mat-form-field-infix{
+  width: 0 !important;
+  display: none;
 }
 
 

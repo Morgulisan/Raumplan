@@ -3,46 +3,43 @@
 
   <mat-form-field style="margin: 0 20px">
     <mat-label>Wer?</mat-label>
-    <select matNativeControl required>
-      <option *ngFor="let p of data.appdata.Partecipants" [value]="p.number">{{p.name}}</option>
-    </select>
+    <mat-select required>
+      <mat-option *ngFor="let p of data.appdata.Partecipants" [value]="p.number">{{p.name}}</mat-option>
+    </mat-select>
   </mat-form-field>
   <mat-form-field style="margin: 0 20px">
     <mat-label>Raum?</mat-label>
-    <select matNativeControl required >
-      <option *ngFor="let r of data.appdata.Rooms" [value]="r.name">{{r.name}}</option>
-    </select>
+    <mat-select required >
+      <mat-option *ngFor="let r of data.appdata.Rooms" [value]="r.name">{{r.name}}</mat-option>
+    </mat-select>
   </mat-form-field>
-  <br>
-  <mat-form-field style="margin: 0 20px">
+  <!--<mat-form-field style="margin: 0 20px">
     <input matInput [matDatepicker]="picker" placeholder="Choose a date">
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
-  <button mat-raised-button (click)="picker.open()">Open</button>
+  <button mat-raised-button (click)="picker.open()">Open</button>-->
+    <input matInput placeholder="Uhrzeit" type="text" class="timepicker" id="time picked" style="margin: 0 20px; width: 180px">
 
-  <input type="text" class="timepicker" id="time picked" style="margin: 0 20px; width: 180px">
-
-  <br>
   <mat-form-field style="margin: 0 20px">
     <mat-label>Dauer</mat-label>
-    <select matNativeControl required>
-      <option value="1">0:15</option>
-      <option value="2">0:30</option>
-      <option value="3">0:45</option>
-      <option value="4">1:00</option>
-      <option value="5">1:15</option>
-      <option value="6">1:30</option>
-      <option value="7">1:45</option>
-      <option value="8">2:00</option>
-      <option value="9">2:15</option>
-      <option value="10">2:30</option>
-      <option value="11">2:45</option>
-      <option value="12">3:00</option>
-      <option value="13">3:15</option>
-      <option value="14">3:30</option>
-      <option value="15">3:45</option>
-      <option value="16">4:00</option>
-    </select>
+    <mat-select required>
+      <mat-option value="1">0:15</mat-option>
+      <mat-option value="2">0:30</mat-option>
+      <mat-option value="3">0:45</mat-option>
+      <mat-option value="4">1:00</mat-option>
+      <mat-option value="5">1:15</mat-option>
+      <mat-option value="6">1:30</mat-option>
+      <mat-option value="7">1:45</mat-option>
+      <mat-option value="8">2:00</mat-option>
+      <mat-option value="9">2:15</mat-option>
+      <mat-option value="10">2:30</mat-option>
+      <mat-option value="11">2:45</mat-option>
+      <mat-option value="12">3:00</mat-option>
+      <mat-option value="13">3:15</mat-option>
+      <mat-option value="14">3:30</mat-option>
+      <mat-option value="15">3:45</mat-option>
+      <mat-option value="16">4:00</mat-option>
+    </mat-select>
   </mat-form-field>
   <script>
   </script>

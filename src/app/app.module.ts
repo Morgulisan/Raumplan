@@ -20,24 +20,27 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { RaumTerminComponent } from './raumansicht/raum-termin/raum-termin.component';
 import { FilterRoomsPipe } from './shared/filter-rooms.pipe';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSelectModule} from '@angular/material/select';
+import { TerminAnlegenComponent } from './termin-anlegen/termin-anlegen.component';
 
 @NgModule({
   imports:
-  [
-    BrowserModule
-    , FormsModule
-    , BackgroundImageDirectiveModule
-    , MatTabsModule
-    , BrowserAnimationsModule
-    , MatIconModule
-    , MatButtonModule
-    , MatTooltipModule
-    , MatInputModule
-    , MatTableModule
-    , MatDialogModule
-    , MatDatepickerModule
-    , MatNativeDateModule
-  ],
+    [
+      BrowserModule
+      , FormsModule
+      , BackgroundImageDirectiveModule
+      , MatTabsModule
+      , BrowserAnimationsModule
+      , MatIconModule
+      , MatButtonModule
+      , MatTooltipModule
+      , MatInputModule
+      , MatTableModule
+      , MatDialogModule
+      , MatDatepickerModule
+      , MatNativeDateModule, MatToolbarModule, MatSelectModule
+    ],
   providers: [
     MatDatepickerModule
     , MatNativeDateModule
@@ -49,7 +52,7 @@ import { FilterRoomsPipe } from './shared/filter-rooms.pipe';
     , TagesansichtComponent
     , TerminComponent
     , NeuerTerminComponent
-    , NeuerTerminDialogPopComponent, RaumTerminComponent, FilterRoomsPipe
+    , NeuerTerminDialogPopComponent, RaumTerminComponent, FilterRoomsPipe, TerminAnlegenComponent
   ],
   bootstrap:
   [

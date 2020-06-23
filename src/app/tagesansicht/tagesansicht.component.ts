@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import {Component, OnInit, Inject, Input} from '@angular/core';
 
 @Component({
   selector: 'app-tagesansicht',
@@ -6,6 +6,8 @@ import { Component, OnInit, Inject } from '@angular/core';
   styleUrls: ['./tagesansicht.component.css']
 })
 export class TagesansichtComponent {
+  @Input() datastruct: any;
+
   public hide = true;
 
   constructor() {}

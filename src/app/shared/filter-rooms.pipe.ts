@@ -12,7 +12,7 @@ export class FilterRoomsPipe implements PipeTransform {
     }
     // filter items array, items which match and return true will be
     // kept, false will be filtered out
-    return items.filter(item => item.Room.indexOf(filter.Room) !== -1);
+    return items.filter(item => item.Room.indexOf(filter.roomToFind) !== -1);
   }
 
 }

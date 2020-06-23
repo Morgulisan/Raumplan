@@ -17,7 +17,7 @@ export class RaumTerminComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.offset =  (50 + 100 * (this.time - 5)) + 'px';
+    this.offset =  (51 + 100 * (this.time - 5)) + 'px';
     this.width = (25 * this.duration - 2) + 'px';
   }
 

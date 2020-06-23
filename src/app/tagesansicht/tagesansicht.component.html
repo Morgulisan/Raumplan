@@ -1,36 +1,56 @@
-
-
 <!--<div class="row no-padding">
   <div class="col l2 m3 s12 icon no-padding" [ngStyle]="{ 'background-image': 'url(' + bild + ')'}">
         <span class="raumName">{{name}}</span>
   </div>
   <div class="s12 m9 l10 indigo darken-4"><span>Dom</span></div>
 </div> -->
+
+<mat-toolbar style="text-align: center" class="center-align">
+  <button mat-icon-button aria-label="previous day">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <span style="margin: 0 10px;">Montag 22. Jun 2020</span>
+
+  <!--<mat-form-field>
+    <input style="display: none" matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>-->
+
+  <button mat-icon-button aria-label="previous next">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+  <!--<button mat-stroked-button class="hide-on-small-only" style="float right">Heute</button>-->
+</mat-toolbar>
+
 <div class="row disable-text-selection">
+
   <div class="col m1 s1 no-padding">
     <div class="kopf"></div>
     <div class="time" *ngFor="let n of [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]">
       <span>{{n}}:00</span>
-    </div> 
+    </div>
   </div>
 
   <div class="row col m10 s11 no-padding">
-    <div class="col l2 m2 s2 no-padding" style="position:relative;" *ngFor="let n of [1,2,3,4,5,6]">
-      <div class="kopf valign-wrapper"><span class="hide-on-small-only truncate">Mittwoch 25.03.</span><span class="show-on-small">25.03.</span></div>
+    <div class="col no-padding raumSpalte" style="position:relative;" *ngFor="let Room of datastruct.Rooms">
+      <div class="kopf valign-wrapper"><span class="truncate">{{Room.name}}</span></div>
       <div (click)="neuerTermin($event)">
         <div class="calendar" *ngFor="let n of [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]"></div>
-        <app-termin bookerName="Malte Kretzschmar" time="8" duration="12" eventName="S1"></app-termin>
-        <app-termin bookerName="Cristoph Pantke" time="12" duration="4" eventName="S1"></app-termin>
-        <app-termin bookerName="Cristoph Pantke" time="14" duration="8" eventName="S1"></app-termin>
-        <app-termin bookerName="neuer Termin" time="6.5" duration="4" eventName="<input type='text'>" [hidden]="hide" class="neu"></app-termin>
+        <app-termin *ngFor="let appointment of datastruct.Dates | filterRooms: {roomToFind : Room.name}"
+                    [bookerName]="appointment.owner"
+                    [time]="appointment.dateTime"
+                    [duration]="appointment.dateDuration"
+                    [eventName]="appointment.name">
+        </app-termin>
+        <!--<app-termin bookerName="neuer Termin" time="6.5" duration="4" eventName="<input type='text'>" [hidden]="hide" class="neu"></app-termin>-->
       </div>
-    </div> 
+    </div>
   </div>
-
   <div class="col m1 no-padding hide-on-small-only">
     <div class="kopf"></div>
     <div class="time right" *ngFor="let n of [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]">
       <span>{{n}}:00</span>
-    </div> 
+    </div>
   </div>
 </div>
