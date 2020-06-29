@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class RaumansichtComponent implements OnInit {
   @Input() roomName: string;
   @Input() roomImage: string;
+  @Input() roomId: string;
   @Input() test: string;
   @Input() date;
   @Input() datestring: string;

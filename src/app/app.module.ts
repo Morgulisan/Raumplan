@@ -23,6 +23,8 @@ import { FilterRoomsPipe } from './shared/filter-rooms.pipe';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSelectModule} from '@angular/material/select';
 import { TerminAnlegenComponent } from './termin-anlegen/termin-anlegen.component';
+import {HttpClientModule} from "@angular/common/http";
+
 
 @NgModule({
   imports:
@@ -39,7 +41,10 @@ import { TerminAnlegenComponent } from './termin-anlegen/termin-anlegen.componen
       , MatTableModule
       , MatDialogModule
       , MatDatepickerModule
-      , MatNativeDateModule, MatToolbarModule, MatSelectModule
+      , MatNativeDateModule
+      , MatToolbarModule
+      , MatSelectModule
+      , HttpClientModule
     ],
   providers: [
     MatDatepickerModule

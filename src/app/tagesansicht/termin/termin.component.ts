@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {DateModel} from "../../shared/data-provider.service";
 
 @Component({
   selector: 'app-termin',
@@ -6,16 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./termin.component.css']
 })
 export class TerminComponent implements OnInit {
-  @Input() bookerName: string;
-  @Input() bookerImg = '';
-  @Input() eventName: string;
-  @Input() time: number;
-  @Input() duration: number;
+  @Input() dateModel: DateModel;
+
   top: string;
   height: string;
 
   ngOnInit() {
-    this.top =  ((this.time - 6) * 50 + 31) + 'px';
-    this.height = (12.5 * this.duration - 2) + 'px';
+    this.top =  ((this.dateModel.dateTime - 24) * 12.5 + 31) + 'px';
+    this.height = (12.5 * this.dateModel.dateDuration - 2) + 'px';
   }
 }

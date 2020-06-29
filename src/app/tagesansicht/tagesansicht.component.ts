@@ -1,4 +1,5 @@
-import {Component, OnInit, Inject, Input} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {DataStruct} from "../shared/data-provider.service";
 
 @Component({
   selector: 'app-tagesansicht',
@@ -6,7 +7,7 @@ import {Component, OnInit, Inject, Input} from '@angular/core';
   styleUrls: ['./tagesansicht.component.css']
 })
 export class TagesansichtComponent {
-  @Input() datastruct: any;
+  @Input() datastruct: DataStruct;
 
   public hide = true;
 

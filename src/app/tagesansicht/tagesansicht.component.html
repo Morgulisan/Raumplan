@@ -1,22 +1,8 @@
-<!--<div class="row no-padding">
-  <div class="col l2 m3 s12 icon no-padding" [ngStyle]="{ 'background-image': 'url(' + bild + ')'}">
-        <span class="raumName">{{name}}</span>
-  </div>
-  <div class="s12 m9 l10 indigo darken-4"><span>Dom</span></div>
-</div> -->
-
 <mat-toolbar style="text-align: center" class="center-align">
   <button mat-icon-button aria-label="previous day">
     <mat-icon>keyboard_arrow_left</mat-icon>
   </button>
   <span style="margin: 0 10px;">Montag 22. Jun 2020</span>
-
-  <!--<mat-form-field>
-    <input style="display: none" matInput [matDatepicker]="picker">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>-->
-
   <button mat-icon-button aria-label="previous next">
     <mat-icon>keyboard_arrow_right</mat-icon>
   </button>
@@ -37,11 +23,7 @@
       <div class="kopf valign-wrapper"><span class="truncate">{{Room.name}}</span></div>
       <div (click)="neuerTermin($event)">
         <div class="calendar" *ngFor="let n of [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]"></div>
-        <app-termin *ngFor="let appointment of datastruct.Dates | filterRooms: {roomToFind : Room.name}"
-                    [bookerName]="appointment.owner"
-                    [time]="appointment.dateTime"
-                    [duration]="appointment.dateDuration"
-                    [eventName]="appointment.name">
+        <app-termin *ngFor="let appointment of datastruct.Dates | filterRooms: {roomToFind : Room.id} " [dateModel]="appointment">
         </app-termin>
         <!--<app-termin bookerName="neuer Termin" time="6.5" duration="4" eventName="<input type='text'>" [hidden]="hide" class="neu"></app-termin>-->
       </div>

@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {DateModel} from "../../shared/data-provider.service";
 
 @Component({
   selector: 'app-raum-termin',
@@ -6,10 +7,8 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./raum-termin.component.scss']
 })
 export class RaumTerminComponent implements OnInit {
-  @Input() terminName: string;
-  @Input() bookerName: string;
-  @Input() time;
-  @Input() duration;
+  @Input() dateModel : DateModel;
+
 
   offset: string;
   width: string;
@@ -17,8 +16,8 @@ export class RaumTerminComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.offset =  (51 + 100 * (this.time - 5)) + 'px';
-    this.width = (25 * this.duration - 2) + 'px';
+    this.offset =  (51 + 25 * (this.dateModel.dateTime - 20)) + 'px';
+    this.width = (25 * this.dateModel.dateDuration - 2) + 'px';
   }
 
 }

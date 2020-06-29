@@ -18,13 +18,7 @@
           <div class="indigo darken-4 tagesPadding"></div>
           <div class="no-padding tagesStunde" *ngFor="let number of [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]"><span>{{number}}:00</span></div>
           <div class="indigo darken-4 tagesPadding"></div>
-          <app-raum-termin *ngFor="let termin of datastruct.Dates | filterRooms: {roomToFind: roomName}"
-                           [terminName]="termin.name"
-                           [bookerName]="termin.owner"
-                           [time]="termin.dateTime"
-                           [duration]="termin.dateDuration" >
-
-          </app-raum-termin>
+          <app-raum-termin *ngFor="let termin of datastruct.Dates | filterRooms: {roomToFind: roomId}" [dateModel]="termin" ></app-raum-termin>
         </div>
       </div>
     </div>
