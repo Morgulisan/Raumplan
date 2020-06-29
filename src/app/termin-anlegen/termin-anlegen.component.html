@@ -1,1 +1,46 @@
-<p>termin-anlegen works!</p>
+<h1 mat-dialog-title style="padding: 40px 10px">Neuen Termin anlegen</h1>
+<div mat-dialog-content fxLayout="row" fxLayoutAlign="space-around center">
+<form #f="ngForm" (ngSubmit)="terminAnlegen(f)">
+
+  <mat-form-field style="margin: 0 20px">
+    <mat-label>Wer?</mat-label>
+    <mat-select required name="wessen" ngModel>
+      <mat-option *ngFor="let p of appdata.Partecipants" [value]="p.number">{{p.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field style="margin: 0 20px">
+    <mat-label>Raum?</mat-label>
+    <mat-select required name="wo" ngModel>
+      <mat-option *ngFor="let r of appdata.Rooms" [value]="r.name">{{r.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <input matInput placeholder="Uhrzeit*" type="text" class="timepicker" id="time picked" style="margin: 0 20px; width: 180px; vertical-align: super;" name="wann" ngModel>
+
+  <mat-form-field style="margin: 0 20px">
+    <mat-label>Dauer</mat-label>
+    <mat-select required name="dauer" ngModel>
+      <mat-option value="1">0:15</mat-option>
+      <mat-option value="2">0:30</mat-option>
+      <mat-option value="3">0:45</mat-option>
+      <mat-option value="4">1:00</mat-option>
+      <mat-option value="5">1:15</mat-option>
+      <mat-option value="6">1:30</mat-option>
+      <mat-option value="7">1:45</mat-option>
+      <mat-option value="8">2:00</mat-option>
+      <mat-option value="9">2:15</mat-option>
+      <mat-option value="10">2:30</mat-option>
+      <mat-option value="11">2:45</mat-option>
+      <mat-option value="12">3:00</mat-option>
+      <mat-option value="13">3:15</mat-option>
+      <mat-option value="14">3:30</mat-option>
+      <mat-option value="15">3:45</mat-option>
+      <mat-option value="16">4:00</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <script>
+  </script>
+  <br>
+  <button mat-raised-button color="primary" style="margin: 50px 20px;" (click)="terminAnlegen(f)">Anlegen</button>
+</form>
+</div>
