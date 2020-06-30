@@ -24,7 +24,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSelectModule} from '@angular/material/select';
 import { TerminAnlegenComponent } from './termin-anlegen/termin-anlegen.component';
 import {HttpClientModule} from "@angular/common/http";
-import { UserTreeComponent } from './shared/user-tree/user-tree.component';
 import {FlexModule} from "@angular/flex-layout";
 
 
@@ -59,7 +58,7 @@ import {FlexModule} from "@angular/flex-layout";
     , TagesansichtComponent
     , TerminComponent
     , NeuerTerminComponent
-    , NeuerTerminDialogPopComponent, RaumTerminComponent, FilterRoomsPipe, TerminAnlegenComponent, UserTreeComponent
+    , NeuerTerminDialogPopComponent, RaumTerminComponent, FilterRoomsPipe, TerminAnlegenComponent,
   ],
   bootstrap:
   [
