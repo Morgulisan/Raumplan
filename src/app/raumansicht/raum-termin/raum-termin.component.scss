@@ -13,4 +13,10 @@
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
   font-family: Roboto,Helvetica,Arial,sans-serif;
+
+  &:hover {
+    min-width: 100px;
+    z-index: 1000;
+    box-shadow: 0 0 15px white;
+  }
 }

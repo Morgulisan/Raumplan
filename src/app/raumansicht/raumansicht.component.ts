@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {DateModel, Room} from "../shared/data-provider.service";
 
 @Component({
   selector: 'app-raumansicht',
@@ -6,12 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./raumansicht.component.css']
 })
 export class RaumansichtComponent implements OnInit {
-  @Input() roomName: string;
-  @Input() roomImage: string;
-  @Input() roomId: string;
-  @Input() test: string;
-  @Input() date;
-  @Input() datestring: string;
+
+  @Input() roomData: Room;
+  @Input() dates : DateModel[];
   @Input() datastruct: any;
 
   constructor() { }
@@ -19,7 +17,4 @@ export class RaumansichtComponent implements OnInit {
   ngOnInit() {
   }
 
-  openDialog() {
-    console.log(this.roomName);
-  }
 }

@@ -4,7 +4,7 @@ import {DateModel} from "../../shared/data-provider.service";
 @Component({
   selector: 'app-termin',
   templateUrl: './termin.component.html',
-  styleUrls: ['./termin.component.css']
+  styleUrls: ['./termin.component.scss']
 })
 export class TerminComponent implements OnInit {
   @Input() dateModel: DateModel;

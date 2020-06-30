@@ -12,11 +12,10 @@
   <mat-form-field style="margin: 0 20px">
     <mat-label>Raum?</mat-label>
     <mat-select required name="wo" ngModel>
-      <mat-option *ngFor="let r of appdata.Rooms" [value]="r.name">{{r.name}}</mat-option>
+      <mat-option *ngFor="let r of appdata.Rooms" [value]="r.id">{{r.name}}</mat-option>
     </mat-select>
   </mat-form-field>
   <input matInput placeholder="Uhrzeit*" type="text" class="timepicker" id="time picked" style="margin: 0 20px; width: 180px; vertical-align: super;" name="wann" ngModel>
-
   <mat-form-field style="margin: 0 20px">
     <mat-label>Dauer</mat-label>
     <mat-select required name="dauer" ngModel>
@@ -36,11 +35,31 @@
       <mat-option value="14">3:30</mat-option>
       <mat-option value="15">3:45</mat-option>
       <mat-option value="16">4:00</mat-option>
+      <mat-option value="17">4:15</mat-option>
+      <mat-option value="18">4:30</mat-option>
+      <mat-option value="19">4:45</mat-option>
+      <mat-option value="20">5:00</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field style="margin: 0 20px">
+    <mat-label>Type</mat-label>
+    <mat-select required name="type" ngModel>
+      <mat-option value="S1">S1</mat-option>
+      <mat-option value="S2">S2</mat-option>
+      <mat-option value="S3">S3</mat-option>
+      <mat-option value="WG">WG</mat-option>
+      <mat-option value="Sichtung">Sichtung</mat-option>
+      <mat-option value="Schulung">Schulung</mat-option>
+      <mat-option value="Veranstaltung">Veranstaltung</mat-option>
+      <mat-option value="PG">PG</mat-option>
+      <mat-option value="Privat">Privat</mat-option>
+      <mat-option value="Sonstiges">Sonstiges</mat-option>
     </mat-select>
   </mat-form-field>
   <script>
   </script>
   <br>
-  <button mat-raised-button color="primary" style="margin: 50px 20px;" (click)="terminAnlegen(f)">Anlegen</button>
+  <button [disabled]="!enabled" mat-raised-button color="primary" style="margin: 50px 20px;" (click)="terminAnlegen(f)">Anlegen</button>
 </form>
 </div>
+<!--'S1','S2','S3','WG','Sichtung','Schulung','Veranstaltung','PG','Privat','Sonstiges'-->

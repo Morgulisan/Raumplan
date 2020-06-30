@@ -24,6 +24,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSelectModule} from '@angular/material/select';
 import { TerminAnlegenComponent } from './termin-anlegen/termin-anlegen.component';
 import {HttpClientModule} from "@angular/common/http";
+import { UserTreeComponent } from './shared/user-tree/user-tree.component';
+import {FlexModule} from "@angular/flex-layout";
 
 
 @NgModule({
@@ -44,7 +46,7 @@ import {HttpClientModule} from "@angular/common/http";
       , MatNativeDateModule
       , MatToolbarModule
       , MatSelectModule
-      , HttpClientModule
+      , HttpClientModule, FlexModule
     ],
   providers: [
     MatDatepickerModule
@@ -57,7 +59,7 @@ import {HttpClientModule} from "@angular/common/http";
     , TagesansichtComponent
     , TerminComponent
     , NeuerTerminComponent
-    , NeuerTerminDialogPopComponent, RaumTerminComponent, FilterRoomsPipe, TerminAnlegenComponent
+    , NeuerTerminDialogPopComponent, RaumTerminComponent, FilterRoomsPipe, TerminAnlegenComponent, UserTreeComponent
   ],
   bootstrap:
   [

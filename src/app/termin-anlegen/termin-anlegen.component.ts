@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {DataProviderService, DateModel} from "../shared/data-provider.service";
 
 @Component({
   selector: 'app-termin-anlegen',
@@ -9,20 +10,25 @@ import {NgForm} from '@angular/forms';
 export class TerminAnlegenComponent implements OnInit {
   @Input() appdata: any;
 
+  enabled = true;
+
   @Input('ngModel')
   wessen: string;
   wo: string;
   wann: string;
   dauer = 4;
 
-  constructor() { }
+  constructor(private readonly prov: DataProviderService) { }
 
   ngOnInit(): void {
     this.initTimePicker();
   }
 
   terminAnlegen(f: NgForm){
+    this.enabled = false;
     console.log('neuer Termin: ' +  f.value.wessen + ' ' + f.value.wo + ' ' + f.value.wann + ' ' + f.value.dauer);
+    let t = new DateModel(f.value.wo,f.value.wessen,f.value.wann,f.value.dauer,"S1");
+    this.prov.addTermin(t);
   }
 
   initTimePicker(){
