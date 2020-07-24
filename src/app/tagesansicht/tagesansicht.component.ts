@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {DataStruct} from "../shared/data-provider.service";
+import {RaumplanDataDataSource} from "../RaumplanData.data-source";
 
 @Component({
   selector: 'app-tagesansicht',
@@ -11,9 +12,11 @@ export class TagesansichtComponent {
 
   public hide = true;
 
-  constructor() {}
+  constructor(public readonly rpDataSource: RaumplanDataDataSource) {
 
-  neuerTermin(e){
+  }
+
+  /*neuerTermin(e){
     e.stopPropagation();
    // alert("Event: "+ e.toString());
     console.log(e);
@@ -23,5 +26,5 @@ export class TagesansichtComponent {
     const neu = e.srcElement.getElementsByClassName('neu');
     console.log(neu);
     this.hide = !this.hide;
-  }
+  }*/
 }

@@ -34,7 +34,7 @@ export class NeuerTerminComponent implements OnInit {
       data: {name: this.name, animal: this.animal, date: this.date, appdata: this.data}
     });
     const timePickers = document.querySelectorAll('.timepicker');
-    // Plain JS using Materialize.css
+    // Plain JS using
     // @ts-ignore
     M.Timepicker.init(
         timePickers,

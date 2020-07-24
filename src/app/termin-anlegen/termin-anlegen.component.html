@@ -1,14 +1,18 @@
 <h1 mat-dialog-title style="padding: 40px 10px">Neuen Termin anlegen</h1>
 <div mat-dialog-content fxLayout="row" fxLayoutAlign="space-around center">
-<form #f="ngForm" (ngSubmit)="terminAnlegen(f)">
-
+<form #f="ngForm" (ngSubmit)="terminAnlegen(f)" *rxapDataSource="let appdata from rpDataSource">
+  <mat-form-field style="margin: 0 20px">
+    <mat-label>Datum</mat-label>
+    <input id="date" matInput [matDatepicker]="picker" (click)="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
   <mat-form-field style="margin: 0 20px">
     <mat-label>Wer?</mat-label>
     <mat-select required name="wessen" ngModel>
       <mat-option *ngFor="let p of appdata.Partecipants" [value]="p.number">{{p.name}}</mat-option>
     </mat-select>
   </mat-form-field>
-
   <mat-form-field style="margin: 0 20px">
     <mat-label>Raum?</mat-label>
     <mat-select required name="wo" ngModel>

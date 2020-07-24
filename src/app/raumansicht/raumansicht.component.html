@@ -9,7 +9,7 @@
         <span class="listenTitel">Dienstag 24.03.2020</span>
       </div>
       <div style="overflow-x:scroll;overflow-y: hidden;" class="test">
-        <div class="row no-padding" style="margin: 0;width:2000px; display: flex;min-height:83px; position: relative;">
+        <div class="row no-padding" style="margin: 0;width:2000px; display: flex;min-height:83px; position: relative;" *rxapDataSource="let dates from rpDates">
           <div class="indigo darken-4 tagesPadding"></div>
           <div class="no-padding tagesStunde" *ngFor="let number of [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]"><span>{{number}}:00</span></div>
           <div class="indigo darken-4 tagesPadding"></div>

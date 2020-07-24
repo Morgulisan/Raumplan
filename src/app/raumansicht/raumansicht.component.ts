@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {DateModel, Room} from "../shared/data-provider.service";
+import {DatesDataSource} from "../RaumplanData.data-source";
 
 @Component({
   selector: 'app-raumansicht',
@@ -12,7 +13,7 @@ export class RaumansichtComponent implements OnInit {
   @Input() dates : DateModel[];
   @Input() datastruct: any;
 
-  constructor() { }
+  constructor(readonly rpDates: DatesDataSource) { }
 
   ngOnInit() {
   }

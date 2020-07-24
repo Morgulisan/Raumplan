@@ -1,4 +1,4 @@
-<mat-toolbar style="text-align: center" class="center-align">
+<mat-toolbar style="text-align: center" class="center-align" >
   <button mat-icon-button aria-label="previous day">
     <mat-icon>keyboard_arrow_left</mat-icon>
   </button>
@@ -9,7 +9,7 @@
   <!--<button mat-stroked-button class="hide-on-small-only" style="float right">Heute</button>-->
 </mat-toolbar>
 
-<div class="row disable-text-selection">
+<div class="row disable-text-selection"  *rxapDataSource="let dataValues from rpDataSource">
 
   <div class="col m1 s1 no-padding">
     <div class="kopf"></div>
@@ -19,11 +19,11 @@
   </div>
 
   <div class="row col m10 s11 no-padding">
-    <div class="col no-padding raumSpalte" style="position:relative;" *ngFor="let Room of datastruct.Rooms">
+    <div class="col no-padding raumSpalte" style="position:relative;" *ngFor="let Room of dataValues.Rooms">
       <div class="kopf valign-wrapper"><span class="truncate">{{Room.name}}</span></div>
-      <div (click)="neuerTermin($event)">
+      <div><!--(click)="neuerTermin($event)"-->
         <div class="calendar" *ngFor="let n of [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]"></div>
-        <app-termin *ngFor="let appointment of datastruct.Dates | filterRooms: {roomToFind : Room.id} " [dateModel]="appointment">
+        <app-termin *ngFor="let appointment of dataValues.Dates | filterRooms: {roomToFind : Room.id} " [dateModel]="appointment">
         </app-termin>
         <!--<app-termin bookerName="neuer Termin" time="6.5" duration="4" eventName="<input type='text'>" [hidden]="hide" class="neu"></app-termin>-->
       </div>

@@ -25,6 +25,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { TerminAnlegenComponent } from './termin-anlegen/termin-anlegen.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FlexModule} from "@angular/flex-layout";
+import {DataSourceCollectionDirectiveModule, DataSourceDirectiveModule} from "@rxap/data-source/directive";
 
 
 @NgModule({
@@ -45,7 +46,7 @@ import {FlexModule} from "@angular/flex-layout";
       , MatNativeDateModule
       , MatToolbarModule
       , MatSelectModule
-      , HttpClientModule, FlexModule
+      , HttpClientModule, FlexModule, DataSourceCollectionDirectiveModule, DataSourceDirectiveModule
     ],
   providers: [
     MatDatepickerModule

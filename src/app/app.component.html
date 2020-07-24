@@ -1,15 +1,14 @@
 
-<div class="container" id="central">
+<div class="container" id="central" >
   <mat-tab-group>
     <mat-tab label="Tagesübersicht">
-      <app-tagesansicht [datastruct]="newDataStruct$ | async"></app-tagesansicht>
-
+      <app-tagesansicht> </app-tagesansicht>
     </mat-tab>
     <mat-tab label="Raumansicht">
-      <app-raumansicht *ngFor="let room of datastruct.Rooms" [roomData]="room" [dates]="datastruct.Dates"></app-raumansicht>
+      <app-raumansicht *rxapDataSourceCollection="let room from raumDataSource" [roomData]="room" ></app-raumansicht>
     </mat-tab>
     <mat-tab label="Termin anlegen">
-      <app-termin-anlegen [appdata]="newDataStruct$ | async"></app-termin-anlegen>
+     <app-termin-anlegen ></app-termin-anlegen>
     </mat-tab>
   </mat-tab-group>
 </div>

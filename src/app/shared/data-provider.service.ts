@@ -65,23 +65,6 @@ export class DataProviderService implements OnInit{
    return DataProviderService.dataObservable$;
   }
 
-  addTermin(termin: DateModel){
-    const formData = new FormData();
-    formData.append('auth','1');
-    formData.append('action', 'new');
-    formData.append('owner', termin.owner.toString());
-    formData.append('room', termin.room.toString());
-    formData.append('time', termin.dateTime.toString());
-    formData.append('duration', termin.dateDuration.toString());
-    formData.append('type', termin.type);
-    this.http.post<any>("http://steam-tools.net/test/MST/webapp/raumplan/backend/interactP.php",formData).subscribe(
-      data => {
-          DataProviderService.dataCache.Dates.push(termin);
-        console.log(data);
-      }
-    );
-  }
-
 
 }
 
@@ -92,7 +75,8 @@ export class Room {
 }
 export class DateModel{
 
-  constructor(r,o,t,d,s,n = null) {
+  constructor(day, r,o,t,d,s,n = null) {
+    this.day = day;
     this.room = r;
     this.owner = o;
     this.dateTime = t;
@@ -105,6 +89,7 @@ export class DateModel{
     this.id = id;
   }
 
+  day: number;
   id: number | null = null;
   room: number;
   owner: number;
@@ -123,6 +108,6 @@ export class User {
 export class DataStruct {
   Rooms : Room[];
   Dates: DateModel[];
-  Partecipants: [];
+  Partecipants: User[];
 }
 
