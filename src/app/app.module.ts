@@ -27,6 +27,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {FlexModule} from "@angular/flex-layout";
 import {DataSourceCollectionDirectiveModule, DataSourceDirectiveModule} from "@rxap/data-source/directive";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {AppRoutingModule} from "./app-routing.module";
+import { TabComponent } from './tab/tab.component';
+import { DateToRouterLinkPipe } from './shared/date-to-router-link.pipe';
 
 
 @NgModule({
@@ -47,7 +50,8 @@ import {MatSnackBar} from "@angular/material/snack-bar";
       , MatNativeDateModule
       , MatToolbarModule
       , MatSelectModule
-      , HttpClientModule, FlexModule, DataSourceCollectionDirectiveModule, DataSourceDirectiveModule
+      , HttpClientModule, FlexModule, DataSourceCollectionDirectiveModule, DataSourceDirectiveModule,
+      AppRoutingModule,
     ],
   providers: [
     MatDatepickerModule
@@ -61,7 +65,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
     , TagesansichtComponent
     , TerminComponent
     , NeuerTerminComponent
-    , NeuerTerminDialogPopComponent, RaumTerminComponent, FilterRoomsPipe, TerminAnlegenComponent,
+    , NeuerTerminDialogPopComponent, RaumTerminComponent, FilterRoomsPipe, TerminAnlegenComponent, TabComponent, DateToRouterLinkPipe,
   ],
   bootstrap:
   [

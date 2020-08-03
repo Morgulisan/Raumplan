@@ -1,11 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {DatesDataSource, RaumDataSource, RaumplanDataDataSource} from "./RaumplanData.data-source";
 
 @Component({
   selector: 'app-my-app',
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ],
-  providers: [RaumplanDataDataSource, DatesDataSource, RaumDataSource]
+  providers: [RaumplanDataDataSource, DatesDataSource, RaumDataSource],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class AppComponent implements OnInit{

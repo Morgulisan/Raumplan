@@ -1,15 +1,15 @@
 <mat-toolbar style="text-align: center" class="center-align" >
-  <button mat-icon-button aria-label="previous day">
+  <button mat-icon-button aria-label="previous day" [routerLink]="date$ | async | dateToRouterLink:-1">
     <mat-icon>keyboard_arrow_left</mat-icon>
   </button>
-  <span style="margin: 0 10px;">Montag 22. Jun 2020</span>
-  <button mat-icon-button aria-label="previous next">
+  <span style="margin: 0 10px;">{{ date$ | async | date:'yyyy-MM-dd' }}</span>
+  <button mat-icon-button aria-label="previous next" [routerLink]="date$ | async | dateToRouterLink:1">
     <mat-icon>keyboard_arrow_right</mat-icon>
   </button>
   <!--<button mat-stroked-button class="hide-on-small-only" style="float right">Heute</button>-->
 </mat-toolbar>
 
-<div class="row disable-text-selection"  *rxapDataSource="let dataValues from rpDataSource">
+<div class="row disable-text-selection"  *rxapDataSource="let dataValues from rpDataSource; viewer: viewer">
 
   <div class="col m1 s1 no-padding">
     <div class="kopf"></div>
