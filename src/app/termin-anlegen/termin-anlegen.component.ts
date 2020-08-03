@@ -3,6 +3,7 @@ import {NgForm} from '@angular/forms';
 import {DateModel} from "../shared/data-provider.service";
 import {RaumplanDataDataSource} from "../RaumplanData.data-source";
 import {HttpClient} from "@angular/common/http";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-termin-anlegen',
@@ -20,7 +21,7 @@ export class TerminAnlegenComponent implements OnInit {
   wann: string;
   dauer = 4;
 
-  constructor(readonly rpDataSource: RaumplanDataDataSource, private readonly http: HttpClient) { }
+  constructor(readonly rpDataSource: RaumplanDataDataSource, private readonly http: HttpClient, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.initTimePicker();
@@ -60,8 +61,14 @@ export class TerminAnlegenComponent implements OnInit {
         this.rpDataSource.refresh();
         //DataProviderService.dataCache.Dates.push(termin);
         console.log("Submitted succesfully: " + JSON.stringify(data) );
+        this.openSnackBar("Termin angelegt")
         this.enabled = true;
       }
     );
+  }
+
+
+  openSnackBar(message: string) {
+    this._snackBar.open(message);
   }
 }

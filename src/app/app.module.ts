@@ -26,6 +26,7 @@ import { TerminAnlegenComponent } from './termin-anlegen/termin-anlegen.componen
 import {HttpClientModule} from "@angular/common/http";
 import {FlexModule} from "@angular/flex-layout";
 import {DataSourceCollectionDirectiveModule, DataSourceDirectiveModule} from "@rxap/data-source/directive";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import {DataSourceCollectionDirectiveModule, DataSourceDirectiveModule} from "@r
   providers: [
     MatDatepickerModule
     , MatNativeDateModule
+    , MatSnackBar
   ],
   declarations:
   [
