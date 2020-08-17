@@ -69,6 +69,12 @@ export class TerminAnlegenComponent implements OnInit {
 
 
   openSnackBar(message: string) {
-    this._snackBar.open(message);
+    this._snackBar.open(message, "Schließen",{
+      duration: 2000,
+    });
   }
+
+  ZeitName(value): string {
+  return  (value/4).toFixed(0) +":"+ (value % 4 * 15).toFixed(0);
+}
 }

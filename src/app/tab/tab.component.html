@@ -1,13 +1,14 @@
 <div fxLayout="column" fxLayoutGap="32px">
 
   <nav mat-tab-nav-bar fxFlex="nogrow">
-    <a mat-tab-link [routerLink]="['overview']">Overview</a>
-    <a mat-tab-link [routerLink]="['details']">Details</a>
-    <a mat-tab-link [routerLink]="['create']">Create</a>
+    <a mat-tab-link [routerLink]="['overview']">Tagesansicht</a>
+    <a mat-tab-link [routerLink]="['create']">Termin Anlegen</a>
   </nav>
 
   <div fxFlex="grow">
-    <router-outlet></router-outlet>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 
 </div>

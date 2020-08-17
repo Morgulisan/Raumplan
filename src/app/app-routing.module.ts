@@ -16,10 +16,6 @@ const ROOT_ROUTES: Routes = [
         component: TagesansichtComponent
       },
       {
-        path: 'details',
-        component: RaumansichtComponent
-      },
-      {
         path: 'create',
         component: TerminAnlegenComponent
       },

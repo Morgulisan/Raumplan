@@ -30,6 +30,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {AppRoutingModule} from "./app-routing.module";
 import { TabComponent } from './tab/tab.component';
 import { DateToRouterLinkPipe } from './shared/date-to-router-link.pipe';
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
 
 @NgModule({
@@ -50,8 +51,12 @@ import { DateToRouterLinkPipe } from './shared/date-to-router-link.pipe';
       , MatNativeDateModule
       , MatToolbarModule
       , MatSelectModule
-      , HttpClientModule, FlexModule, DataSourceCollectionDirectiveModule, DataSourceDirectiveModule,
-      AppRoutingModule,
+      , MatAutocompleteModule
+      , HttpClientModule
+      , FlexModule
+      , DataSourceCollectionDirectiveModule
+      , DataSourceDirectiveModule
+      , AppRoutingModule
     ],
   providers: [
     MatDatepickerModule
