@@ -4,6 +4,7 @@ import {DateModel} from "../shared/data-provider.service";
 import {RaumplanDataDataSource} from "../RaumplanData.data-source";
 import {HttpClient} from "@angular/common/http";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {ControlOptions} from "@rxap/utilities";
 
 @Component({
   selector: 'app-termin-anlegen',
@@ -12,6 +13,8 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 })
 export class TerminAnlegenComponent implements OnInit {
   @Input() appdata: any;
+
+  options: ControlOptions = [];
 
   enabled = true;
 
@@ -24,6 +27,16 @@ export class TerminAnlegenComponent implements OnInit {
   constructor(readonly rpDataSource: RaumplanDataDataSource, private readonly http: HttpClient, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    for(let i:number = 0; i < 96; i++){
+      this.options.push(
+        {
+          value: i,
+          display: this.ZeitName(i)
+        }
+      )
+    }
+
+
     this.initTimePicker();
   }
 
@@ -69,6 +82,12 @@ export class TerminAnlegenComponent implements OnInit {
 
 
   openSnackBar(message: string) {
-    this._snackBar.open(message);
+    this._snackBar.open(message, "Schließen",{
+      duration: 2000,
+    });
   }
+
+  ZeitName(value): string {
+  return  (value/4).toFixed(0)+":"+ (value % 4 * 15).toFixed(0).padStart(2,"0");
+}
 }

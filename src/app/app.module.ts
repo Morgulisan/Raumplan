@@ -27,28 +27,29 @@ import {HttpClientModule} from "@angular/common/http";
 import {FlexModule} from "@angular/flex-layout";
 import {DataSourceCollectionDirectiveModule, DataSourceDirectiveModule} from "@rxap/data-source/directive";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
 
 @NgModule({
-  imports:
-    [
-      BrowserModule
-      , FormsModule
-      , BackgroundImageDirectiveModule
-      , MatTabsModule
-      , BrowserAnimationsModule
-      , MatIconModule
-      , MatButtonModule
-      , MatTooltipModule
-      , MatInputModule
-      , MatTableModule
-      , MatDialogModule
-      , MatDatepickerModule
-      , MatNativeDateModule
-      , MatToolbarModule
-      , MatSelectModule
-      , HttpClientModule, FlexModule, DataSourceCollectionDirectiveModule, DataSourceDirectiveModule
-    ],
+    imports:
+        [
+            BrowserModule
+            , FormsModule
+            , BackgroundImageDirectiveModule
+            , MatTabsModule
+            , BrowserAnimationsModule
+            , MatIconModule
+            , MatButtonModule
+            , MatTooltipModule
+            , MatInputModule
+            , MatTableModule
+            , MatDialogModule
+            , MatDatepickerModule
+            , MatNativeDateModule
+            , MatToolbarModule
+            , MatSelectModule
+            , HttpClientModule, FlexModule, DataSourceCollectionDirectiveModule, DataSourceDirectiveModule, MatAutocompleteModule
+        ],
   providers: [
     MatDatepickerModule
     , MatNativeDateModule
