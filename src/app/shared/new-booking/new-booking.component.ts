@@ -11,10 +11,10 @@ export interface DialogData {
 
 @Component({
   selector: 'app-neuer-termin',
-  templateUrl: './neuer-termin.component.html',
-  styleUrls: ['./neuer-termin.component.scss']
+  templateUrl: './new-booking.component.html',
+  styleUrls: ['./new-booking.component.scss']
 })
-export class NeuerTerminComponent implements OnInit {
+export class NewBookingComponent implements OnInit {
 
   @Input() name: string;
   @Input() animal: string;
@@ -50,7 +50,7 @@ export class NeuerTerminComponent implements OnInit {
 
 @Component({
   selector: 'app-neuer-termin-dialog-pop',
-  templateUrl: 'neuer-termin-dialog-pop.component.html',
+  templateUrl: 'new-booking-dialog-pop.component.html',
 })
 export class NeuerTerminDialogPopComponent {
 

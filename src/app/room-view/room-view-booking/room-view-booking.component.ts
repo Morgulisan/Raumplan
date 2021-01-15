@@ -3,10 +3,10 @@ import {DateModel} from "../../shared/data-provider.service";
 
 @Component({
   selector: 'app-raum-termin',
-  templateUrl: './raum-termin.component.html',
-  styleUrls: ['./raum-termin.component.scss']
+  templateUrl: './room-view-booking.component.html',
+  styleUrls: ['./room-view-booking.component.scss']
 })
-export class RaumTerminComponent implements OnInit {
+export class RoomViewBookingComponent implements OnInit {
   @Input() dateModel : DateModel;
 
 

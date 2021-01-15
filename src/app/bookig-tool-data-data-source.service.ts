@@ -10,7 +10,7 @@ import {map} from "rxjs/operators";
   url: 'http://steam-tools.net/test/MST/webapp/raumplan/backend/update.php'
 })
 @Injectable()
-export class RaumplanDataDataSource extends HttpDataSource<DataStruct> {
+export class BookigToolDataDataSource extends HttpDataSource<DataStruct> {
 
 }
 
@@ -20,7 +20,7 @@ export class RaumplanDataDataSource extends HttpDataSource<DataStruct> {
 })
 @Injectable()
 export class DatesDataSource extends PipeDataSource<DataStruct,DateModel[]>{
-  constructor(public readonly rpDataSource: RaumplanDataDataSource) {
+  constructor(public readonly rpDataSource: BookigToolDataDataSource) {
     super(rpDataSource, map((value:DataStruct) => value.Dates));
   }
 }
@@ -31,7 +31,7 @@ export class DatesDataSource extends PipeDataSource<DataStruct,DateModel[]>{
 })
 @Injectable()
 export class RaumDataSource extends PipeDataSource<DataStruct,DateModel[]>{
-  constructor(public readonly rpDataSource: RaumplanDataDataSource) {
+  constructor(public readonly rpDataSource: BookigToolDataDataSource) {
     super(rpDataSource, map((value:DataStruct) => value.Rooms));
   }
 }
@@ -41,7 +41,7 @@ export class RaumDataSource extends PipeDataSource<DataStruct,DateModel[]>{
 })
 @Injectable()
 export class PartnerDataSource extends PipeDataSource<DataStruct,DateModel[]>{
-  constructor(public readonly rpDataSource: RaumplanDataDataSource) {
+  constructor(public readonly rpDataSource: BookigToolDataDataSource) {
     super(rpDataSource, map((value:DataStruct) => value.Partecipants));
   }
 }

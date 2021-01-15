@@ -1,18 +1,18 @@
 import {Component, Input} from '@angular/core';
 import {DataStruct} from "../shared/data-provider.service";
-import {RaumplanDataDataSource} from "../RaumplanData.data-source";
+import {BookigToolDataDataSource} from "../bookig-tool-data-data-source.service";
 
 @Component({
   selector: 'app-tagesansicht',
-  templateUrl: './tagesansicht.component.html',
-  styleUrls: ['./tagesansicht.component.css']
+  templateUrl: './daily-bookings-view.component.html',
+  styleUrls: ['./daily-bookings-view.component.css']
 })
-export class TagesansichtComponent {
+export class DailyBookingsViewComponent {
   @Input() datastruct: DataStruct;
 
   public hide = true;
 
-  constructor(public readonly rpDataSource: RaumplanDataDataSource) {
+  constructor(public readonly rpDataSource: BookigToolDataDataSource) {
 
   }
 

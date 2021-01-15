@@ -1,16 +1,16 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {DateModel} from "../shared/data-provider.service";
-import {RaumplanDataDataSource} from "../RaumplanData.data-source";
+import {BookigToolDataDataSource} from "../bookig-tool-data-data-source.service";
 import {HttpClient} from "@angular/common/http";
 import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-termin-anlegen',
-  templateUrl: './termin-anlegen.component.html',
-  styleUrls: ['./termin-anlegen.component.scss']
+  templateUrl: './new-booking-view.component.html',
+  styleUrls: ['./new-booking-view.component.scss']
 })
-export class TerminAnlegenComponent implements OnInit {
+export class NewBookingViewComponent implements OnInit {
   @Input() appdata: any;
 
   enabled = true;
@@ -21,7 +21,7 @@ export class TerminAnlegenComponent implements OnInit {
   wann: string;
   dauer = 4;
 
-  constructor(readonly rpDataSource: RaumplanDataDataSource, private readonly http: HttpClient, private _snackBar: MatSnackBar) { }
+  constructor(readonly rpDataSource: BookigToolDataDataSource, private readonly http: HttpClient, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.initTimePicker();
@@ -59,7 +59,7 @@ export class TerminAnlegenComponent implements OnInit {
     this.http.post<any>("http://steam-tools.net/test/MST/webapp/raumplan/backend/interactP.php",formData).subscribe(
       data => {
         this.rpDataSource.refresh();
-        //DataProviderService.dataCache.Dates.push(termin);
+        //DataProviderService.dataCache.Dates.push(booking);
         console.log("Submitted succesfully: " + JSON.stringify(data) );
         this.openSnackBar("Termin angelegt")
         this.enabled = true;

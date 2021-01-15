@@ -1,13 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {DateModel, Room} from "../shared/data-provider.service";
-import {DatesDataSource} from "../RaumplanData.data-source";
+import {DatesDataSource} from "../bookig-tool-data-data-source.service";
 
 @Component({
-  selector: 'app-raumansicht',
-  templateUrl: './raumansicht.component.html',
-  styleUrls: ['./raumansicht.component.css']
+  selector: 'app-room-view',
+  templateUrl: './room-view.component.html',
+  styleUrls: ['./room-view.component.css']
 })
-export class RaumansichtComponent implements OnInit {
+export class RoomViewComponent implements OnInit {
 
   @Input() roomData: Room;
   @Input() dates : DateModel[];

@@ -13,11 +13,6 @@
       <mat-option *ngFor="let r of data.appdata.Rooms" [value]="r.name">{{r.name}}</mat-option>
     </mat-select>
   </mat-form-field>
-  <!--<mat-form-field style="margin: 0 20px">
-    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-  <button mat-raised-button (click)="picker.open()">Open</button>-->
     <input matInput placeholder="Uhrzeit" type="text" class="timepicker" id="time picked" style="margin: 0 20px; width: 180px">
 
   <mat-form-field style="margin: 0 20px">
