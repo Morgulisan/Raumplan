@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import {DateModel} from "../../shared/data-provider.service";
 
 @Component({
-  selector: 'app-termin',
-  templateUrl: './termin.component.html',
-  styleUrls: ['./termin.component.scss']
+  selector: 'booking-block',
+  templateUrl: './booking-block.component.html',
+  styleUrls: ['./booking-block.component.scss']
 })
-export class TerminComponent implements OnInit {
+export class BookingBlockComponent implements OnInit {
   @Input() dateModel: DateModel;
 
   top: string;

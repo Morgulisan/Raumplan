@@ -6,7 +6,7 @@ import {HttpClient} from "@angular/common/http";
 import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
-  selector: 'app-termin-anlegen',
+  selector: 'app-new-booking-view',
   templateUrl: './new-booking-view.component.html',
   styleUrls: ['./new-booking-view.component.scss']
 })
@@ -30,7 +30,7 @@ export class NewBookingViewComponent implements OnInit {
   terminAnlegen(f: NgForm){
 
     this.enabled = false;
-    console.log('neuer Termin: ' +  f.value.wessen + ' ' + f.value.wo + ' ' + f.value.wann + ' ' + f.value.dauer);
+    console.log('new booking with data: ' +  f.value.wessen + ' ' + f.value.wo + ' ' + f.value.wann + ' ' + f.value.dauer);
     let t = new DateModel(f.value.day ,f.value.wo,f.value.wessen,f.value.wann,f.value.dauer,"S1");
     this.addTermin(t);
 
@@ -69,6 +69,8 @@ export class NewBookingViewComponent implements OnInit {
 
 
   openSnackBar(message: string) {
-    this._snackBar.open(message);
+    this._snackBar.open(message, 'schließen', {
+      duration: 5000
+    });
   }
 }

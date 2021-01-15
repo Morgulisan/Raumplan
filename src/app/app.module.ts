@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { RoomViewComponent } from './room-view/room-view.component';
 import { DailyBookingsViewComponent } from './daily-bookings-view/daily-bookings-view.component';
-import { TerminComponent } from './daily-bookings-view/booking/termin.component';
+import { BookingBlockComponent } from './daily-bookings-view/booking/booking-block.component';
 import { BackgroundImageDirectiveModule } from './shared/background-image.directive';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,7 +22,7 @@ import { RoomViewBookingComponent } from './room-view/room-view-booking/room-vie
 import { FilterRoomsPipe } from './shared/filter-rooms.pipe';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSelectModule} from '@angular/material/select';
-import { NewBookingViewComponent } from './termin-anlegen/new-booking-view.component';
+import { NewBookingViewComponent } from './new-booking-view/new-booking-view.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FlexModule} from "@angular/flex-layout";
 import {DataSourceCollectionDirectiveModule, DataSourceDirectiveModule} from "@rxap/data-source/directive";
@@ -60,7 +60,7 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
     AppComponent
     , RoomViewComponent
     , DailyBookingsViewComponent
-    , TerminComponent
+    , BookingBlockComponent
     , NewBookingComponent
     , NeuerTerminDialogPopComponent, RoomViewBookingComponent, FilterRoomsPipe, NewBookingViewComponent,
   ],
